@@ -1,20 +1,26 @@
 [
   {
     "id": 0,
-    "no_musica": "Caminho no deserto",
+    "no_musica": "Toda Glória e Majestade",
     "no_cantor": "Tamires",
-    "tom": "B",
+    "tom": "D",
     "status": "Tá pegada",
     "ordem_cifra": "INTRO;A;A;INTRO",
     "partes_cifra": {
       "INTRO": [
-        "D  F#m  Bm  A  (2x)"
+        {
+          "acordes": "D  F#m  Bm  A  (2x)"
+        }
       ],
       "A": [
-        "D             F#m         Bm ",
-        "Toda glória e majestade a Ti",
-        "           A ",
-        "Que reinas para sempre "
+        {
+          "acordes": "D                    F#m               Bm",
+          "letra": "Toda glória e majestade a Ti"
+        },
+        {
+          "acordes": "                     A",
+          "letra": "Que reinas para sempre"
+        }
       ]
     }
   },
