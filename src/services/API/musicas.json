@@ -98,8 +98,15 @@
     "no_cantor": "Nyêdja",
     "tom": "B",
     "status": "Em progresso",
-    "ordem_cifra": "",
-    "partes_cifra": {}
+    "ordem_cifra": "A",
+    "partes_cifra": {
+      "A": [
+        {
+          "acordes": "-- cifra indisponível --",
+          "letra": ""
+        }
+      ]
+    }
   },
   {
     "id": 2,
@@ -107,7 +114,14 @@
     "no_cantor": "Rogério",
     "tom": "C",
     "status": "Pra pegar",
-    "ordem_cifra": "",
-    "partes_cifra": {}
+    "ordem_cifra": "A",
+    "partes_cifra": {
+      "A": [
+        {
+          "acordes": "-- cifra indisponível --",
+          "letra": ""
+        }
+      ]
+    }
   }
 ]
