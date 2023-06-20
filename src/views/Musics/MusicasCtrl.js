@@ -15,7 +15,8 @@ export default {
       },
 
       musicaSelecionada: null,
-      mostraMaisInformacoes: false
+      mostraMaisInformacoes: false,
+      tomSelecionado: null
     }
   },
 
@@ -32,6 +33,14 @@ export default {
 
     async selecionaMusica(musica) {
       this.musicaSelecionada = musica
+      this.tomSelecionado = musica.tom
+      this.mostraMaisInformacoes = true
+    },
+
+    mudaTom(tom) {
+      if (this.tomSelecionado) this.mostraMaisInformacoes = false
+
+      this.tomSelecionado = tom
       this.mostraMaisInformacoes = true
     }
   }

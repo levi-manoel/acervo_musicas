@@ -16,7 +16,7 @@
     </el-table>
 
     <section v-if="mostraMaisInformacoes">
-      <cifra :musica="musicaSelecionada" />
+      <cifra :musica="musicaSelecionada" :mudaTom="mudaTom" :tomSelecionado="tomSelecionado" />
     </section>
   </main>
 </template>
