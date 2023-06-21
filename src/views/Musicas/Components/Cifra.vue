@@ -4,17 +4,19 @@
       <el-container>
         <el-header>
           <h3>{{ musica.no_musica }}</h3>
-          <el-dropdown trigger="click" @command="mudaTom">
+          <el-dropdown trigger="click" size="small" class="btn" @command="mudaTom">
             <span class="el-dropdown-link">
-              <el-button>
+              <el-button size="small">
                 Tom: {{ tomSelecionado }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
-              </el-button> {{ tomSelecionado !== musica.tom ? `(Original: ${musica.tom})` : '' }}
+              </el-button>
+              {{ tomSelecionado !== musica.tom ? ` - (Original: ${musica.tom})` : '' }}
             </span>
 
             <template #dropdown>
               <el-dropdown-menu>
-                <el-dropdown-item v-for="campo of Object.keys(camposHarmonicos)" :command="campo">{{ campo
-                }}</el-dropdown-item>
+                <el-dropdown-item v-for="campo of Object.keys(camposHarmonicos)" :command="campo">
+                  {{ campo }}
+                </el-dropdown-item>
               </el-dropdown-menu>
             </template>
           </el-dropdown>
@@ -34,6 +36,12 @@
   </div>
 </template>
 
+<style scoped>
+h3 {
+  font-size: larger;
+}
+</style>
+
 <script>
 export default {
   props: ['musica', 'mudaTom', 'tomSelecionado'],
@@ -43,11 +51,17 @@ export default {
       cifraFormatada: [],
       camposHarmonicos: {
         'C': { I: 'C', II: 'D', III: 'E', IV: 'F', V: 'G', VI: 'A', VII: 'B' },
+        'Db': { I: 'Db', II: 'Eb', III: 'F', IV: 'Gb', V: 'Ab', VI: 'Bb', VII: 'C' },
         'D': { I: 'D', II: 'E', III: 'F#', IV: 'G', V: 'A', VI: 'B', VII: 'C#' },
+        'Eb': { I: 'Eb', II: 'F', III: 'G', IV: 'Ab', V: 'Bb', VI: 'C', VII: 'D' },
         'E': { I: 'E', II: 'F#', III: 'G#', IV: 'A', V: 'B', VI: 'C#', VII: 'D#' },
         'F': { I: 'F', II: 'G', III: 'A', IV: 'Bb', V: 'C', VI: 'D', VII: 'Eb' },
+        // 'F#': { I: 'F#', II: 'G#', III: 'A#', IV: 'B', V: 'C#', VI: 'D#', VII: 'E#' },
+        'Gb': { I: 'Gb', II: 'Ab', III: 'Bb', IV: 'Cb', V: 'Db', VI: 'Eb', VII: 'F' },
         'G': { I: 'G', II: 'A', III: 'B', IV: 'C', V: 'D', VI: 'E', VII: 'F#' },
+        'Ab': { I: 'Ab', II: 'Bb', III: 'C', IV: 'Db', V: 'Eb', VI: 'F', VII: 'G' },
         'A': { I: 'A', II: 'B', III: 'C#', IV: 'D', V: 'E', VI: 'F#', VII: 'G#' },
+        'Bb': { I: 'Bb', II: 'C', III: 'D', IV: 'Eb', V: 'F', VI: 'G', VII: 'A' },
         'B': { I: 'B', II: 'C#', III: 'D#', IV: 'E', V: 'F#', VI: 'G#', VII: 'A#' },
       }
     }

@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink to="/">Músicas</RouterLink>
         </nav> -->
       </div>
+
     </header>
 
     <main>
