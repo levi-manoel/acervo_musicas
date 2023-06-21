@@ -1,6 +1,47 @@
 <template>
   <main>
-    <el-table :data="dadosTabela" highlight-current-row style="width: 100%" @current-change="selecionaMusica">
+    <el-collapse>
+      <el-collapse-item title="- Filtros" name="1">
+        <div>
+          <el-form label-position="top" label-width="100px" :model="filtros">
+            <el-row>
+              <el-col :span="24">
+                <el-form-item label="Nome">
+                  <el-input v-model="filtros.nome" />
+                </el-form-item>
+              </el-col>
+            </el-row>
+
+            <el-row :gutter="20">
+              <el-col :span="12">
+                <el-form-item label="Cantor(a)">
+                  <el-select v-model="filtros.cantor" filterable multiple placeholder="Selecione">
+                    <el-option label="Tamires" value="Tamires" />
+                    <el-option label="Nyêdja" value="Nyêdja" />
+                    <el-option label="Rogério" value="Rogério" />
+                    <el-option label="Dedé" value="Dedé" />
+                  </el-select>
+                </el-form-item>
+              </el-col>
+
+              <el-col :span="12">
+                <el-form-item label="Status">
+                  <el-select v-model="filtros.status" filterable multiple placeholder="Selecione">
+                    <el-option label="Tá pegada" value="Tá pegada" />
+                    <el-option label="Em progresso" value="Em progresso" />
+                    <el-option label="Pra pegar" value="Pra pegar" />
+                  </el-select>
+                </el-form-item>
+              </el-col>
+            </el-row>
+          </el-form>
+        </div>
+      </el-collapse-item>
+    </el-collapse>
+
+    <br />
+
+    <el-table :data="musicasFiltradas" highlight-current-row style="width: 100%" @current-change="selecionaMusica">
       <el-table-column align="center" width="250" label="Nome" prop="no_musica" />
       <el-table-column align="center" width="120" label="Cantor(a)" prop="no_cantor" />
       <el-table-column align="center" width="120" label="Tom" prop="tom" />

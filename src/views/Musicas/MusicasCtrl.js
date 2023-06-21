@@ -7,11 +7,17 @@ export default {
   },
   data() {
     return {
-      dadosTabela: [],
+      musicas: [],
       coresTags: {
         'Tá pegada': 'success',
         'Em progresso': 'warning',
         'Pra pegar': 'info'
+      },
+
+      filtros: {
+        nome: '',
+        status: [],
+        cantor: []
       },
 
       musicaSelecionada: null,
@@ -28,7 +34,7 @@ export default {
     async carregaLista() {
       const musicas = await API.musicas.listarMusicas()
 
-      this.dadosTabela = musicas
+      this.musicas = musicas
     },
 
     async selecionaMusica(musica) {
@@ -42,6 +48,18 @@ export default {
 
       this.tomSelecionado = tom
       this.mostraMaisInformacoes = true
+    }
+  },
+
+  computed: {
+    musicasFiltradas() {
+      return this.musicas.filter(musica => {
+        const filtroNome = musica.no_musica.includes(this.filtros.nome)
+        const filtroStatus = this.filtros.status.length !== 0 ? this.filtros.status.includes(musica.status) : true
+        const filtroCantor = this.filtros.cantor.length !== 0 ? this.filtros.cantor.includes(musica.no_cantor) : true
+
+        return filtroNome && filtroStatus && filtroCantor
+      })
     }
   }
 }
