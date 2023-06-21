@@ -3,16 +3,23 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Página Inicial</RouterLink>
-        <RouterLink to="/musicas">Músicas</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <div class="common-layout">
+    <header>
+      <h3>Acervo de Músicas</h3>
 
-  <RouterView />
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Página Inicial</RouterLink>
+          <RouterLink to="/musicas">Músicas</RouterLink>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <RouterView />
+
+    </main>
+  </div>
 </template>
 
 <style scoped>
