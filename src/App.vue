@@ -8,10 +8,9 @@ import { RouterLink, RouterView } from 'vue-router'
       <h3>Acervo de Músicas</h3>
 
       <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Página Inicial</RouterLink>
-          <RouterLink to="/musicas">Músicas</RouterLink>
-        </nav>
+        <!-- <nav>
+          <RouterLink to="/">Músicas</RouterLink>
+        </nav> -->
       </div>
     </header>
 
@@ -26,6 +25,8 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 .logo {
