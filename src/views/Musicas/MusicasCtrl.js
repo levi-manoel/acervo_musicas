@@ -54,7 +54,7 @@ export default {
   computed: {
     musicasFiltradas() {
       return this.musicas.filter(musica => {
-        const filtroNome = musica.no_musica.includes(this.filtros.nome)
+        const filtroNome = String(musica.no_musica).toLowerCase().includes(String(this.filtros.nome).toLowerCase())
         const filtroStatus = this.filtros.status.length !== 0 ? this.filtros.status.includes(musica.status) : true
         const filtroCantor = this.filtros.cantor.length !== 0 ? this.filtros.cantor.includes(musica.no_cantor) : true
 

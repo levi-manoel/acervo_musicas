@@ -15,7 +15,7 @@
             <el-row :gutter="20">
               <el-col :span="12">
                 <el-form-item label="Cantor(a)">
-                  <el-select v-model="filtros.cantor" filterable multiple placeholder="Selecione">
+                  <el-select v-model="filtros.cantor" multiple placeholder="Selecione">
                     <el-option label="Tamires" value="Tamires" />
                     <el-option label="Nyêdja" value="Nyêdja" />
                     <el-option label="Rogério" value="Rogério" />
@@ -26,7 +26,7 @@
 
               <el-col :span="12">
                 <el-form-item label="Status">
-                  <el-select v-model="filtros.status" filterable multiple placeholder="Selecione">
+                  <el-select v-model="filtros.status" multiple placeholder="Selecione">
                     <el-option label="Tá pegada" value="Tá pegada" />
                     <el-option label="Em progresso" value="Em progresso" />
                     <el-option label="Pra pegar" value="Pra pegar" />
