@@ -1,9 +1,22 @@
-import json from './musicas.json'
+// import 'dotenv/config'
+import axios from 'axios'
 
-async function listarMusicas() {
-  return json
+const url = 'https://acervo-musicas-server.onrender.com/musicas'
+
+const api = axios.create({
+  baseURL: url
+})
+
+async function listar() {
+  try {
+    const response = await api.get('/listar')
+    return response
+    
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export default {
-  listarMusicas
+  listar
 }
