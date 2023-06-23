@@ -33,7 +33,6 @@ export default {
   methods: {
     async carregaLista() {
       const { data: musicas } = await API.musicas.listar()
-      console.log('🚀\n🚀\n🚀\n || musicas:', musicas)
 
       this.musicas = musicas
     },
@@ -55,9 +54,9 @@ export default {
   computed: {
     musicasFiltradas() {
       return this.musicas.filter(musica => {
-        const filtroNome = String(musica.no_musica).toLowerCase().includes(String(this.filtros.nome).toLowerCase())
+        const filtroNome = String(musica.nome).toLowerCase().includes(String(this.filtros.nome).toLowerCase())
         const filtroStatus = this.filtros.status.length !== 0 ? this.filtros.status.includes(musica.status) : true
-        const filtroCantor = this.filtros.cantor.length !== 0 ? this.filtros.cantor.includes(musica.no_cantor) : true
+        const filtroCantor = this.filtros.cantor.length !== 0 ? this.filtros.cantor.includes(musica.cantor) : true
 
         return filtroNome && filtroStatus && filtroCantor
       })

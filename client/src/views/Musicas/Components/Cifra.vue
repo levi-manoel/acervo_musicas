@@ -3,7 +3,7 @@
     <div class="common-layout">
       <el-container>
         <el-header>
-          <h3>{{ musica.no_musica }}</h3>
+          <h3>{{ musica.nome }}</h3>
           <el-dropdown trigger="click" size="small" class="btn" @command="mudaTom">
             <span class="el-dropdown-link">
               <el-button size="small">
@@ -82,8 +82,8 @@ export default {
     formataCifra() {
       const cifra = []
 
-      for (const parte of this.musica.ordem_cifra.split(';')) {
-        cifra.push(JSON.parse(JSON.stringify(this.musica.partes_cifra[parte])))
+      for (const parte of this.musica.ordem.split(';')) {
+        cifra.push(JSON.parse(JSON.stringify(this.musica.partes[parte])))
       }
 
       for (const parte of cifra) {
