@@ -33,6 +33,7 @@ export default {
   methods: {
     async carregaLista() {
       const { data: musicas } = await API.musicas.listar()
+      console.log('🚀\n🚀\n🚀\n || musicas:', musicas)
 
       this.musicas = musicas
     },
