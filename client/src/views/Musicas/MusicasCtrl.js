@@ -20,6 +20,7 @@ export default {
         cantor: []
       },
 
+      carregandoMusicas: true,
       musicaSelecionada: null,
       mostraMaisInformacoes: false,
       tomSelecionado: null
@@ -35,6 +36,7 @@ export default {
       const { data: musicas } = await API.musicas.listar()
 
       this.musicas = musicas
+      this.carregandoMusicas = false
     },
 
     async selecionaMusica(musica) {

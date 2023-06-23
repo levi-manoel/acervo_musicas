@@ -41,7 +41,7 @@
 
     <br />
 
-    <el-table :data="musicasFiltradas" highlight-current-row style="width: 100%" @current-change="selecionaMusica">
+    <el-table :data="musicasFiltradas" v-loading="carregandoMusicas" highlight-current-row style="width: 100%" @current-change="selecionaMusica">
       <el-table-column align="center" width="250" label="Nome" prop="nome" />
       <el-table-column align="center" width="120" label="Cantor(a)" prop="cantor" />
       <el-table-column align="center" width="120" label="Tom" prop="tom" />
