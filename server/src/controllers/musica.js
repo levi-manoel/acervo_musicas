@@ -1,4 +1,4 @@
-import services from '../services'
+import services from '../services/index.js'
 
 async function listar(req, res) {
   try {

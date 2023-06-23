@@ -1,8 +1,8 @@
-import db from '../db'
+import db from '../db/index.js'
 
 async function listar() {
   const musicas = await db.musica.select('*')
-  
+
   return musicas
 }
 
